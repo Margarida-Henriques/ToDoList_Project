@@ -1,0 +1,34 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 10% auto;
+  width: 40%;
+}
+
+#taskList {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0;
+  margin: 10 0 0 0;
+  list-style: none;
+}
+
+#taskList > * {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(236, 236, 236);
+  border-radius: 5px;
+  padding: 7px 7px;
+}
+
+.deleteButton {
+  background-color: rgb(156, 40, 40);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+}
