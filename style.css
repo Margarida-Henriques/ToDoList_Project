@@ -7,11 +7,24 @@ body {
 .container {
   display: flex;
   justify-content: center;
-  flex-direction: column;
-  margin: 5% auto;
-  width: 550px;
-  height: 400px;
+  flex-direction: row;
+  margin: 10% auto;
+  width: 750px;
+  height: 450px;
   gap: 15px;
+
+  /*   padding: 30px;
+  border: none;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05), 0 6px 10px rgba(0, 0, 0, 0.19); */
+}
+
+.containerMain {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 70%;
 }
 
 h1 {
@@ -53,21 +66,16 @@ h1 {
   transition: 0.3s ease, color 0.3s ease;
 }
 
-.containerToDo {
-  display: flex;
-  flex-direction: row;
-  gap: 15px;
-  width: 100%;
-}
-
 #taskList {
+  overflow: scroll;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   gap: 5px;
   padding: 0;
   margin: 0;
+  margin-right: 5px;
   list-style: none;
-  width: 60%;
 }
 
 #taskList > * {
@@ -79,6 +87,10 @@ h1 {
   padding: 7px;
   font-size: 14px;
   border: 1px solid black;
+}
+
+.taskText {
+  max-width: 80%;
 }
 
 .optionsContainer {
@@ -120,7 +132,6 @@ h1 {
 /* CONTAINER DONE _______________________________ */
 
 .containerDone {
-  height: 100%;
   width: 40%;
   background-color: #e6fffd;
   padding: 10px;
