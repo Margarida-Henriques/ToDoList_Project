@@ -27,18 +27,35 @@ addButton.addEventListener('click', addTask)
 
 function creatTaskElement(task) {
 
-    //Create element with the input information
+    //Create element
     const listItem = document.createElement('li');
-    listItem.textContent = task;
+
+    //Creating text
+    const taskText = document.createElement('span');
+    taskText.textContent = task;
+    taskText.className = 'taskText'
+
+    //Creating Option Div
+    const optionsContainer = document.createElement('div')
+    optionsContainer.className = 'optionsContainer'
+
+    //Creating an Done Button
+    const doneButton = document.createElement('button')
+    doneButton.textContent = '✔'
+    doneButton.className = 'doneButton'
 
     //Creating an Delete Button
     const deleteButton = document.createElement('button')
-    deleteButton.textContent = 'Delete'
+    deleteButton.textContent = 'X'
     deleteButton.className = 'deleteButton'
 
-    //Adding to the HTML
-    listItem.appendChild(deleteButton);
+    // Add elements to the DOM
+    listItem.appendChild(taskText);
+    listItem.appendChild(optionsContainer);
+    optionsContainer.appendChild(doneButton);
+    optionsContainer.appendChild(deleteButton);
     taskList.appendChild(listItem);
+
 
     //Delete element clicked on
     deleteButton.addEventListener('click', function () {
@@ -52,8 +69,8 @@ function creatTaskElement(task) {
 function saveTasks() {
     let tasks = [];
 
-    taskList.querySelectorAll('li').forEach(function (item) {
-        tasks.push(item.textContent.replace('Delete', '').trim());
+    taskList.querySelectorAll('.taskText').forEach(function (item) {
+        tasks.push(item.textContent.trim());
     });
 
     localStorage.setItem('tasks', JSON.stringify(tasks));

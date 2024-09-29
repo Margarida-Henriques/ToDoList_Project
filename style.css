@@ -1,10 +1,54 @@
+body {
+  font-size: 16px;
+  font-family: "Arial", sans-serif;
+  background-color: #ffffff;
+}
+
 .container {
   display: flex;
-  align-items: center;
   justify-content: center;
-  flex-direction: column;
-  margin: 10% auto;
-  width: 40%;
+  flex-direction: Row;
+  margin: 5% auto;
+  width: 50%;
+  height: 400px;
+  gap: 15px;
+}
+
+/* CONTAINER TO-DO _______________________________ */
+
+h1 {
+  font-size: 40px;
+  color: #b799ff;
+}
+
+.containerAddTask {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#taskInput {
+  border: none;
+  border: 1px solid black;
+  border-radius: 20px 0px 0px 20px;
+  background-color: rgb(255, 255, 255);
+  padding: 12px;
+  width: 100%;
+}
+
+#addTask {
+  cursor: pointer;
+  color: white;
+  background-color: #acbcff;
+  border: 1px solid black;
+  border-radius: 0px 20px 20px 0px;
+  padding: 12px 12px 12px 9px;
+  box-sizing: border-box;
+  transition: 0.3s ease, color 0.3s ease;
+}
+#addTask:hover {
+  background-color: #899add;
+  transition: 0.3s ease, color 0.3s ease;
 }
 
 #taskList {
@@ -20,15 +64,56 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(236, 236, 236);
+  background-color: #aee2ff;
   border-radius: 5px;
-  padding: 7px 7px;
+  padding: 7px;
+  font-size: 14px;
+  border: 1px solid black;
+}
+
+.optionsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.doneButton {
+  cursor: pointer;
+  background-color: #e6fffd;
+  border-radius: 100%;
+  border: none;
+  width: 25px;
+  height: 25px;
+  transition: 0.3s ease, color 0.3s ease;
+}
+.doneButton:hover {
+  background-color: rgb(129, 212, 173);
+  transition: 0.3s ease, color 0.3s ease;
 }
 
 .deleteButton {
-  background-color: rgb(156, 40, 40);
-  color: white;
+  cursor: pointer;
+  background-color: #ec9691;
+  border-radius: 100%;
   border: none;
-  border-radius: 5px;
-  padding: 5px;
+  width: 25px;
+  height: 25px;
+  transition: 0.3s ease, color 0.3s ease;
+}
+
+.deleteButton:hover {
+  background-color: #e0463e;
+  transition: 0.3s ease, color 0.3s ease;
+}
+
+/* CONTAINER DONE _______________________________ */
+
+.containerDone {
+  height: 100%;
+  width: 40%;
+  background-color: #e6fffd;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid black;
 }
