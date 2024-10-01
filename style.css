@@ -2,6 +2,8 @@ body {
   font-size: 16px;
   font-family: "Arial", sans-serif;
   background-color: #ffffff;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
@@ -9,22 +11,17 @@ body {
   justify-content: center;
   flex-direction: row;
   margin: 10% auto;
-  width: 750px;
-  height: 450px;
+  width: 100%;
+  max-width: 800px;
+  height: 500px;
   gap: 15px;
-
-  /*   padding: 30px;
-  border: none;
-  border-radius: 10px;
-  background-color: #ffffff;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05), 0 6px 10px rgba(0, 0, 0, 0.19); */
 }
 
 .containerMain {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  width: 70%;
+  width: 60%;
 }
 
 h1 {
@@ -74,7 +71,6 @@ h1 {
   gap: 5px;
   padding: 0;
   margin: 0;
-  margin-right: 5px;
   list-style: none;
 }
 
@@ -132,9 +128,54 @@ h1 {
 /* CONTAINER DONE _______________________________ */
 
 .containerDone {
-  width: 40%;
+  box-sizing: border-box;
+  width: 50%;
   background-color: #e6fffd;
   padding: 10px;
   border-radius: 10px;
   border: 1px solid black;
+}
+
+/* MEDIA _______________________________ */
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    height: auto;
+    margin: 5% auto;
+  }
+
+  .containerMain,
+  .containerDone {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  #tasklist {
+    overflow: hidden;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 24px;
+    margin-bottom: 5px;
+  }
+  /* #taskInput {
+    padding: 8px;
+  } */
+
+  /* #addTask {
+    padding: 8px 10px;
+  } */
+
+  .containerDone {
+    width: 100%;
+    padding: 8px 10px;
+  }
 }
