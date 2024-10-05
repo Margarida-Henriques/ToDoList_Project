@@ -19,13 +19,19 @@ body {
 
 h1 {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   grid-area: 1 / 1 / 2 / 2;
   padding-right: 15px;
   font-size: 40px;
   color: #b799ff;
   margin: 0;
+}
+
+.titleDone {
+  display: flex;
+  justify-content: flex-start;
+  color: white;
 }
 
 /* CONTAINER ADD TASK _______________________________ */
@@ -70,6 +76,7 @@ h1 {
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
+  width: 100%;
   gap: 5px;
   padding: 0;
   margin: 0;
@@ -141,10 +148,19 @@ h1 {
   width: 100%;
 }
 
+#taskDoneList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  list-style: none;
+  padding: 0 0 0 10px;
+}
+
 /* MEDIA _______________________________ */
 
 @media screen and (max-width: 768px) {
   .container {
+    display: flex;
     flex-direction: column;
     align-items: center;
     width: 90%;
@@ -152,17 +168,19 @@ h1 {
     margin: 5% auto;
   }
 
-  .containerMain,
-  .containerDone {
+  .containerDone,
+  .containerAddTask,
+  .taskList {
     width: 100%;
+    margin: 0;
   }
 
   h1 {
     font-size: 30px;
   }
 
-  #tasklist {
-    overflow: hidden;
+  #tasklist > * {
+    width: 100%;
   }
 }
 
