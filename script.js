@@ -84,10 +84,24 @@ function createDoneTaskElement(taskText) {
 
     const doneTaskText = document.createElement('span');
     doneTaskText.textContent = taskText;
-    doneTask.className = 'doneTaskText';
+    doneTaskText.className = 'doneTaskText';
 
+    const doneTaskButton = document.createElement('button');
+    doneTaskButton.textContent = '◄';
+    doneTaskButton.className = 'doneTaskButton';
+
+    doneTask.appendChild(doneTaskButton);
     doneTask.appendChild(doneTaskText);
     taskDoneList.appendChild(doneTask);
+
+    doneTaskButton.addEventListener('click', function () {
+        const taskText = doneTask.querySelector('.doneTaskText').textContent;
+
+        createTaskElement(taskText);
+        taskDoneList.removeChild(doneTask);
+
+        saveTasks();
+    })
 
 }
 
